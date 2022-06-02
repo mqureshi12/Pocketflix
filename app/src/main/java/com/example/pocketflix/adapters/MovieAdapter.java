@@ -72,7 +72,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             Log.i("Adapter", imageURL);
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
-            Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
+            Glide.with(context).load(movie.getPosterPath()).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
         }
     }
 }
