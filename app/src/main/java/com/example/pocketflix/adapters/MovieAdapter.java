@@ -110,7 +110,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPosterPath();
                 imagePlaceholder = R.drawable.flicks_movie_placeholder;
             }
-            int radius = 80; // corner radius, higher value = more rounded
+            int radius = 40; // corner radius, higher value = more rounded
             int margin = 10; // crop margin, set to 0 for corners with no crop
             Glide.with(context)
                     .load(imageUrl)
