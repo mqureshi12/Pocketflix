@@ -25,7 +25,7 @@ The following OPTIONAL **stretch** features are implemented:
 The following **additional** features were chosen and implemented by the developer:
 
 * [X] Created Android icon for the app (featuring assets by [Freepik at flaticon](https://www.flaticon.com/)).
-* <img src="https://i.ibb.co/b1sxrB6/logoround.jpg" alt="logoround" border="0";></a>
+* Icon: <p align="left"> <img src= app/src/res/drawable/logoround.png width="100"> </p>
 
 ## Video Walkthrough
 
