@@ -13,16 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
-
 import com.bumptech.glide.Glide;
 import com.example.pocketflix.MovieDetailsActivity;
 import com.example.pocketflix.R;
 import com.example.pocketflix.models.Movie;
 
 import org.parceler.Parcels;
-
 import java.util.List;
-
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {

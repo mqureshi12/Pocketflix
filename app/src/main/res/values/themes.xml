@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.PocketFlix" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#D56C04</item>
+        <item name="colorPrimary">#fa5c66</item>
         <item name="colorPrimaryVariant">#2F536A</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
