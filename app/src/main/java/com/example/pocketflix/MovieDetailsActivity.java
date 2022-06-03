@@ -4,16 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.pocketflix.databinding.ActivityMainBinding;
+import com.example.pocketflix.databinding.ActivityMovieDetailsBinding;
 import com.example.pocketflix.models.Movie;
 
 import org.parceler.Parcels;
 
 public class MovieDetailsActivity extends AppCompatActivity {
+
+    private ActivityMovieDetailsBinding binding;
 
     // The movie to display
     Movie movie;
@@ -27,12 +32,15 @@ public class MovieDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details);
+        binding = ActivityMovieDetailsBinding.inflate(getLayoutInflater());
+
+        View view = binding.getRoot();
+        setContentView(view);
         // Resolve the view objects
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
-        ivPoster = (ImageView) findViewById((R.id.ivPoster));
+        tvTitle = binding.tvTitle;
+        tvOverview = binding.tvOverview;
+        rbVoteAverage = binding.rbVoteAverage;
+        ivPoster = binding.ivPoster;
 
         // Unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
