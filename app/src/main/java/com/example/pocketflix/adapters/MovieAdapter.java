@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
 
 import com.bumptech.glide.Glide;
 import com.example.pocketflix.MovieDetailsActivity;
@@ -21,6 +22,8 @@ import com.example.pocketflix.models.Movie;
 import org.parceler.Parcels;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
@@ -91,6 +94,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         public void bind(Movie movie) {
             String imageURL = movie.getPosterPath();
+            int imagePlaceholder;
 
             Log.i("Adapter", imageURL);
             tvTitle.setText(movie.getTitle());
@@ -100,11 +104,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 // then imageUrl = backdrop image
                 imageUrl = movie.getBackdropPath();
+                imagePlaceholder = R.drawable.flicks_movie_placeholder_landscape;
             } else {
                 // else imageUrl = poster image
                 imageUrl = movie.getPosterPath();
+                imagePlaceholder = R.drawable.flicks_movie_placeholder;
             }
-            Glide.with(context).load(imageUrl).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
+            int radius = 80; // corner radius, higher value = more rounded
+            int margin = 10; // crop margin, set to 0 for corners with no crop
+            Glide.with(context)
+                    .load(imageUrl)
+                    .transform(new RoundedCornersTransformation(radius, margin))
+                    .placeholder(R.drawable.flicks_movie_placeholder)
+                    .error(R.drawable.flicks_movie_placeholder)
+                    .into(ivPoster);
         }
     }
 }
