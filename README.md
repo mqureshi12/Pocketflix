@@ -35,7 +35,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-* [X] First time developing for Android; learned key terms while building out features
+* First time developing for Android; learned key terms while building out features
 
 ## Open-source libraries used
 
