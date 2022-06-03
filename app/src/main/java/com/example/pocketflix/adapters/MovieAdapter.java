@@ -115,8 +115,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             Glide.with(context)
                     .load(imageUrl)
                     .transform(new RoundedCornersTransformation(radius, margin))
-                    .placeholder(R.drawable.flicks_movie_placeholder)
-                    .error(R.drawable.flicks_movie_placeholder)
+                    .placeholder(imagePlaceholder)
+                    .error(imagePlaceholder)
                     .into(ivPoster);
         }
     }
